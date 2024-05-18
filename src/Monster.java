@@ -1,4 +1,7 @@
 public interface Monster {
+
+    public void Sound();
+
     public int getHealth();
 
     public void setHealth(int health);

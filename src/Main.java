@@ -3,6 +3,10 @@ public class Main {
         Engine engine = new Engine();
         if (engine.Run() == 0) {
             System.out.println("Thanx for playing Politechnika Dungeon!");
+            BasicMonster monster = new FireMonster();
+            monster.Sound();
+            monster = new RockMonster();
+            monster.Sound();
         } else {
             System.out.println("An error occurred"); // logs?
         }
