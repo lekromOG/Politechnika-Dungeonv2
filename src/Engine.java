@@ -9,7 +9,6 @@ public class Engine {
     public Engine() {
         Engine.state = GameState.RUNNING;
         parser = new Parser();
-
     }
 
     public int Run() {
@@ -23,16 +22,16 @@ public class Engine {
         System.out.println("Welcome to Politechnika Dungeon");
         System.out.println("What is Thine name?");
 
+        parser.
+
         return 0;
     }
 
     private static int MainLoop() {
-
         return 0;
     }
 
     public static void SetupNewGame() {
-
     }
 
     private static boolean LoadGame() {
@@ -47,6 +46,23 @@ public class Engine {
 //
 ////            case
 //        }
+        switch(Engine.state){
+            case MENU:
+                PrintMenuActions();
+                break;
+            case RUNNING:
+                PrintRunningActions();
+                break;
+            case SAVING:
+                PrintSavingActions();
+                break;
+            case EXITING:
+                PrintExitingActions();
+                break;
+            case RESTART:
+                PrintRestartActions();
+                break;
+        }
 
     }
 
@@ -56,5 +72,23 @@ public class Engine {
         System.out.println("(Q)uit Game");
     }
 
-    // PrintGreetingRoom
+    private static void PrintRunningActions() {
+        System.out.println("(A)ttack");
+        System.out.println("(D)efend");
+        System.out.println("(S)ave");
+        System.out.println("(Q)uit");
+    }
+
+    private static void PrintSavingActions() {
+        System.out.println("Saving...");
+    }
+
+   private static void PrintExitingActions() {
+        System.out.println("Exiting...");
+   }
+
+   private static void PrintRestartActions() {
+        System.out.println("Restarting...");
+   }
+
 }

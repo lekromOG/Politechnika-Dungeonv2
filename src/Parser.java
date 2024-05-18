@@ -4,6 +4,10 @@ import java.util.Scanner;
 
 public class Parser {
 
+    /*
+    * Parser takes input
+    *
+    * */
     private final Scanner scanner;
     private static final String defaultMsg = ">>";
     private static final Map<Context, String[]> inputContextMap = new HashMap<Context, String[]>()
