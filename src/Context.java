@@ -1,0 +1,3 @@
+public enum Context {
+    MENU, ENCOUNTER, INVENTORY, LEVEL_CLEAR, GAME_OVER, GAME_WON
+}
