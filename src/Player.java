@@ -12,9 +12,6 @@ public class Player {
 
     }
 
-    private
-
-
     public boolean getName() {
         return false;
     }

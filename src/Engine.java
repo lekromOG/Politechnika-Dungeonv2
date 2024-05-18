@@ -23,7 +23,6 @@ public class Engine {
         System.out.println("Welcome to Politechnika Dungeon");
         System.out.println("What is Thine name?");
 
-        parser.Prompt();
         return 0;
     }
 
