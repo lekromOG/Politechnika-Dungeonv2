@@ -3,6 +3,7 @@ import java.util.Timer;
 public class Player {
     private Timer timer;
     private int remainingTime;
+    private String name;
 
     public Player() {
         this.timer = new Timer();
@@ -10,10 +11,14 @@ public class Player {
     }
 
     public void MakeTurn() {
-
     }
 
-    public boolean getName() {
-        return false;
+    public String GetName() {
+        return this.name;
+    }
+
+    public String SetName(final String _name) {
+        this.name = _name;
+        return _name;
     }
 }

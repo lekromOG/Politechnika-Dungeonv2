@@ -19,11 +19,12 @@ public class Engine {
 
         // prompt
 
+
+
         System.out.println("Welcome to Politechnika Dungeon");
         System.out.println("What is Thine name?");
 
-        // parser.
-
+        final String name = parser.Prompt("(Enter your name): ");
         return 0;
     }
 
