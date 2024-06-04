@@ -1,3 +1,4 @@
+package PolitechnikaDungeon;
 
 public enum Action {
     ATTACK, DESCEND, DEFEND, USE_ITEM,

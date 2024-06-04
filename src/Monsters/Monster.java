@@ -1,3 +1,5 @@
+package Monsters;
+
 public interface Monster {
 
     public void Sound();

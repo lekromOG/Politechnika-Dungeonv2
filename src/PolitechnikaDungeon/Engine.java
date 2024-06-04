@@ -1,4 +1,6 @@
-import java.util.Scanner;
+package PolitechnikaDungeon;
+
+
 
 public class Engine {
     private static Player player;
@@ -22,7 +24,7 @@ public class Engine {
 
         player = new Player();
 
-        System.out.println("Welcome to Politechnika Dungeon");
+        System.out.println("Welcome to Politechnika PolitechnikaDungeon.Dungeon");
         System.out.println("What is Thine name?");
         final String name = parser.Prompt("(Enter your name): ");
         player.SetName(name);
@@ -47,7 +49,7 @@ public class Engine {
 
         // TODO:
 
-//        switch (Engine.state) {
+//        switch (PolitechnikaDungeon.Engine.state) {
 //
 ////            case
 //        }
@@ -98,6 +100,12 @@ public class Engine {
 
    private static void SetupNewDungeon() {
         dungeon = new Dungeon();
+
+   }
+
+   private static void ParseMonsterJSON() {
+
+        Parser
 
    }
 

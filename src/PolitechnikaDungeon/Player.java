@@ -1,3 +1,5 @@
+package PolitechnikaDungeon;
+
 import java.util.Timer;
 
 public class Player {

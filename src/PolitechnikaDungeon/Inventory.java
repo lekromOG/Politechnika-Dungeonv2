@@ -1,3 +1,5 @@
+package PolitechnikaDungeon;
+
 import java.util.ArrayList;
 
 public class Inventory {

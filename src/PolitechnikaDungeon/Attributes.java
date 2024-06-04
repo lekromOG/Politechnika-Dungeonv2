@@ -1,3 +1,5 @@
+package PolitechnikaDungeon;
+
 public class Attributes {
     private int vitality;
     private int intelligence;

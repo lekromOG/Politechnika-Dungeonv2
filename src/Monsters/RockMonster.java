@@ -1,12 +1,14 @@
-class FireMonster extends BasicMonster {
+package Monsters;
 
-    public FireMonster() {
-        super(100, 10, 10, 10, 1, "Rock Monster");
+class RockMonster extends BasicMonster {
+
+    public RockMonster() {
+        super(100, 10, 10, 10, 1, "Rock Monsters.Monster");
     }
 
     @Override
     public void Sound() {
-        System.out.println("Fire Monster: I am a fire monster!");
+        System.out.println("Rock Monsters.Monster: I am a rock monster!");
     }
 
     @Override

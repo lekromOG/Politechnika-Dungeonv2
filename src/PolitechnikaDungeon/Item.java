@@ -1,9 +1,11 @@
-abstract class Item {
+package PolitechnikaDungeon;
+
+public abstract class Item {
 
     private String name;
 
     public Item() {
-        this.name = "Item";
+        this.name = "PolitechnikaDungeon.Item";
     }
 
     public String getName() {

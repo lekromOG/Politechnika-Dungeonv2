@@ -1,3 +1,7 @@
+package Monsters;
+
+import Monsters.Monster;
+
 public abstract class BasicMonster implements Monster {
     private int health;
     private int attack;

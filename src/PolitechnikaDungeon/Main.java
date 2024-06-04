@@ -1,8 +1,10 @@
+package PolitechnikaDungeon;
+
 public class Main {
     public static void main(String[] args) {
         Engine engine = new Engine();
         if (engine.Run() == 0) {
-            System.out.println("Thanx for playing Politechnika Dungeon!");
+            System.out.println("Thanx for playing Politechnika PolitechnikaDungeon.Dungeon!");
             // No objects here - this is why we have engine.Run()
         } else {
             System.out.println("An error occurred"); // logs?
@@ -14,16 +16,16 @@ public class Main {
 * TODO:
 *  First phase (Taking input, setting new game):
 * 1. Parsing input by context
-*    Main menu (New Game, Load Game, Exit)
-*    Parser:
+*    PolitechnikaDungeon.Main menu (New Game, Load Game, Exit)
+*    PolitechnikaDungeon.Parser:
 *    Takes String -> input[0].toLower()
 *    for option in options:
 *       if option[0].toLower() == input[0].toLower()
-*           return Action
+*           return PolitechnikaDungeon.Action
 *
 *
 * Classes implementing core of the game
-*  Dungeon:
+*  PolitechnikaDungeon.Dungeon:
 *   Holds in:
 *   currentLevel
 *   dsswewed
@@ -31,11 +33,11 @@ public class Main {
 *
 *
 * Creature classes:
-* Player:
-* Monster (interface):
+* PolitechnikaDungeon.Player:
+* Monsters.Monster (interface):
 * AI (interface)
 * Enum AIType:
-* Item (interface):
+* PolitechnikaDungeon.Item (interface):
 * Spell (interface):
 * Level (interface)
 *

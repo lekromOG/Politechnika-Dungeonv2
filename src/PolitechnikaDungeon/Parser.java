@@ -1,3 +1,5 @@
+package PolitechnikaDungeon;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -5,7 +7,7 @@ import java.util.Scanner;
 public class Parser {
 
     /*
-    * Parser takes input
+    * PolitechnikaDungeon.Parser takes input
     *
     * */
     private final Scanner scanner;
@@ -23,12 +25,12 @@ public class Parser {
 //        menuArray[0] = "new";
 //        menuArray[1] = "load";
 //        menuArray[2] = "quit";
-//        put(Context.MENU, menuArray);
+//        put(PolitechnikaDungeon.Context.MENU, menuArray);
 
 
     private static final Map<String, Action> stringActionMap = new HashMap<>();
 //        String n = "new";
-//        put(n, Action.NEW_GAME);
+//        put(n, PolitechnikaDungeon.Action.NEW_GAME);
     public Parser() {
         this.scanner = new Scanner(System.in);
 
