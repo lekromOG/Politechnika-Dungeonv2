@@ -5,8 +5,26 @@
 * - It is responsible for choosing what monsters will be in another "room"
 * - for deciding what loot
 * */
+
+
+import Rooms.Room;
+
+import java.util.List;
+
 public class Dungeon {
-    private int currentLevel = 0;
+    private Room currentLevel;
+    private int mobsPerLevel = 3;
+    final private static int INITIAL_CHANCE_OF_LOOT = 100;
+    final private static int MAX_LEVELS = 15;
+
+    private List<Room> roomLevels;
+
+    public Dungeon() {
+
+
+
+
+    }
 
     /* Setters */
     public void SetLevel(int level) {
@@ -19,12 +37,5 @@ public class Dungeon {
     }
 
     private void IncrementLevel() {
-        this.currentLevel++;
     }
-
-    /* called at the end of the fight (end of the room) */
-    private void AdvanceLevel() {
-
-    }
-
 }

@@ -4,7 +4,8 @@ public class Engine {
     private static Player player;
     private static GameState state;
     private static Parser parser;
-//  private static Room currentRoom;
+    private static Dungeon dungeon;
+//  private static Rooms.Room currentRoom;
 
     public Engine() {
         Engine.state = GameState.RUNNING;
@@ -19,12 +20,15 @@ public class Engine {
 
         // prompt
 
-
+        player = new Player();
 
         System.out.println("Welcome to Politechnika Dungeon");
         System.out.println("What is Thine name?");
-
         final String name = parser.Prompt("(Enter your name): ");
+        player.SetName(name);
+
+        SetupNewDungeon();
+
         return 0;
     }
 
@@ -90,6 +94,11 @@ public class Engine {
 
    private static void PrintRestartActions() {
         System.out.println("Restarting...");
+   }
+
+   private static void SetupNewDungeon() {
+        dungeon = new Dungeon();
+
    }
 
 }

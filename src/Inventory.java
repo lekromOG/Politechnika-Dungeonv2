@@ -6,7 +6,9 @@ public class Inventory {
     private int inventoryWeight;
     private int currentItems = 0;
 
-    public void PlayerInventory() {
+    private boolean isFull = false;
+
+    public Inventory() {
         this.items = new ArrayList<>(capacity);
         this.inventoryWeight = 0;
         this.currentItems = 0;
@@ -32,8 +34,7 @@ public class Inventory {
         return inventoryWeight;
     }
 
-    public void setInventoryWeight(int inventoryWeight) {
-        this.inventoryWeight = inventoryWeight;
+    public void setInventoryWeight(int inventoryWeight) { this.inventoryWeight = inventoryWeight;
     }
 
     public int getCurrentItems() {
@@ -65,5 +66,17 @@ public class Inventory {
 
     public void dropItem() {
 
+    }
+
+    public void SetIsFull() {
+        this.isFull = true;
+    }
+
+    public void SetNotFull() {
+        this.isFull = false;
+    }
+
+    public boolean CheckIsFull() {
+        return items.size() == capacity;
     }
 }

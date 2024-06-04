@@ -10,24 +10,32 @@ public class Parser {
     * */
     private final Scanner scanner;
     private static final String defaultMsg = ">>";
-    private static Context currentContext;
+    private static Context currentContext = Context.MENU;
+
+    public static final String NO_MSG = "NOMSG";
 
     /* Z mapa chodzi o to, bymozna bylo miec wszystkie mozliwe
     * opcje podajac kontekst. Wtedy tylko sprawdzamy czy user wprowadzil
     * poprawny input (czyli czy input usera jest w array)
     *  */
-    private static final Map<Context, String[]> inputContextMap = new HashMap<Context, String[]>()
-    {{
-        String[] menuArray = new String[10];
-        menuArray[0] = "new";
-        menuArray[1] = "load";
-        menuArray[2] = "quit";
-        put(Context.MENU, menuArray);
+    private static final Map<Context, String[]> inputContextMap = new HashMap<>();
+//        String[] menuArray = new String[3];
+//        menuArray[0] = "new";
+//        menuArray[1] = "load";
+//        menuArray[2] = "quit";
+//        put(Context.MENU, menuArray);
 
-    }};
 
+    private static final Map<String, Action> stringActionMap = new HashMap<>();
+//        String n = "new";
+//        put(n, Action.NEW_GAME);
     public Parser() {
         this.scanner = new Scanner(System.in);
+
+        String[] menuArray = new String[]{"new", "load", "quit"};
+        inputContextMap.put(Context.MENU, menuArray);
+        stringActionMap.put(menuArray[0], Action.NEW_GAME);
+
     }
 
     /* Prompt user for action
@@ -38,9 +46,7 @@ public class Parser {
     public String Prompt(String msg) {
         String input;
         do {
-            if (msg.isEmpty()) {
-                System.out.print(defaultMsg);
-            } else {
+            if (!msg.equals(NO_MSG)) {
                 System.out.print(msg);
             }
             input = this.scanner.nextLine();
@@ -52,60 +58,19 @@ public class Parser {
         Action actionToReturn = Action.UNDEFINED;
         String input = Prompt(msg);
 
-        switch (currentContext)
-        {
-            case MENU:
-                if (input.equals("new")) {
-                    actionToReturn = Action.NEW_GAME;
-                } else if (input.equals("load")) {
-                    actionToReturn = Action.LOAD_GAME;
-                } else if (input.equals("quit")) {
-                    actionToReturn = Action.QUIT;
-                }
-                break;
-            case RUNNING:
-                if (input.equals("attack")) {
-                    actionToReturn = Action.ATTACK;
-                } else if (input.equals("defend")) {
-                    actionToReturn = Action.DEFEND;
-                } else if (input.equals("descend")) {
-                    actionToReturn = Action.DESCEND;
-                } else if (input.equals("use item")) {
-                    actionToReturn = Action.USE_ITEM;
-                } else if (input.equals("cast spell")) {
-                    actionToReturn = Action.CAST_SPELL;
-                } else if (input.equals("look")) {
-                    actionToReturn = Action.LOOK;
-                }
-                break;
-            case SAVING:
-                if (input.equals("save")) {
-                    actionToReturn = Action.SAVE_GAME;
-                } else if (input.equals("quit")) {
-                    actionToReturn = Action.QUIT;
-                }
-                break;
-            case EXITING:
-                if (input.equals("yes")) {
-                    actionToReturn = Action.YES;
-                } else if (input.equals("no")) {
-                    actionToReturn = Action.NO;
-                }
-                break;
-            default:
-                actionToReturn = Action.UNDEFINED;
-                break;
+        for (String actionString : inputContextMap.get(currentContext)) {
+            if (input.toLowerCase().charAt(0) == actionString.toLowerCase().charAt(0) ||
+                    input.split("\\s+")[0].equalsIgnoreCase(actionString.split("\\s+")[0])
+                ) {
+                System.out.println("Got " + actionString);
+                actionToReturn = stringActionMap.get(actionString);
+            }
         }
 
         if (currentContext == Context.NO_CONTEXT) {
-            return Action.NOT_SPECIFIC;
+            actionToReturn = Action.NOT_SPECIFIC;
         }
-
         return actionToReturn;
-    }
-
-    private boolean ValidateInput(final String) {
-        return false;
     }
 
     public Context GetCurrentContext() {
