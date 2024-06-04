@@ -12,7 +12,7 @@ import Rooms.Room;
 import java.util.List;
 
 public class Dungeon {
-    private Room currentLevel;
+    private static Room currentLevel;
     private int mobsPerLevel = 3;
     final private static int INITIAL_CHANCE_OF_LOOT = 100;
     final private static int MAX_LEVELS = 15;
@@ -21,19 +21,15 @@ public class Dungeon {
 
     public Dungeon() {
 
-
-
-
     }
 
     /* Setters */
     public void SetLevel(int level) {
-        this.currentLevel = level;
     }
 
     /* Getters */
-    public int GetLevel(){
-        return this.currentLevel;
+    public Room GetLevel(){
+        return currentLevel;
     }
 
     private void IncrementLevel() {
