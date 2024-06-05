@@ -72,7 +72,6 @@ public class Dungeon {
 
         for (int i = 0; i < monsters.length(); i++) {
             JSONObject monster = monsters.getJSONObject(i);
-
             System.out.println(monster.getInt("id"));
 
         }
