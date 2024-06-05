@@ -9,9 +9,7 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-
-import static java.nio.file.Files.newInputStream;
-
+import Rooms.*;
 public class Engine {
     private static Player player;
     private static GameState state;
@@ -40,8 +38,8 @@ public class Engine {
 
         System.out.println("Welcome to Politechnika PolitechnikaDungeon.Dungeon");
         System.out.println("What is Thine name?");
-        final String name = parser.Prompt("(Enter your name): ");
-        player.SetName(name);
+//        final String name = parser.Prompt("(Enter your name): ");
+        player.SetName("Nigga");
 
         try {
             ParseMonsterJSONAndLoadObject();
@@ -54,6 +52,13 @@ public class Engine {
         SetupNewDungeon();
 
 //         Main loop
+
+        while (state != GameState.RUNNING) {
+
+            // if not room beaten, don't advance
+            dungeon.PlayCurrentLevel();
+
+        }
 
         return 0;
     }

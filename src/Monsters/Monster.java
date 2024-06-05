@@ -1,4 +1,5 @@
 package Monsters;
+import PolitechnikaDungeon.Player;
 
 public interface Monster {
 
@@ -30,7 +31,7 @@ public interface Monster {
 
     public void setABoss(boolean isABoss);
 
-    public void Attack(Monster target);
+    public void Attack(Player target);
 
     public void Defend();
 

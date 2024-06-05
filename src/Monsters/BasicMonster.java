@@ -1,8 +1,9 @@
 package Monsters;
 
 import Monsters.Monster;
+import PolitechnikaDungeon.Player;
 
-public abstract class BasicMonster implements Monster {
+public class BasicMonster implements Monster {
     private int health;
     private int attack;
     private int defense;
@@ -11,6 +12,8 @@ public abstract class BasicMonster implements Monster {
     private String name;
     private boolean isABoss;
 
+    private String description;
+
     public BasicMonster(int health, int attack, int defense, int speed, int level, String name) {
         this.health = health;
         this.attack = attack;
@@ -18,6 +21,51 @@ public abstract class BasicMonster implements Monster {
         this.speed = speed;
         this.level = level;
         this.name = name;
+    }
+
+    public BasicMonster() {
+
+    }
+
+    public void Act(Player player) {
+
+
+    }
+
+    public void PrintStats() {
+
+    }
+
+    public void LevelUp() {
+
+    }
+
+    public void setABoss(boolean isABoss) {
+
+    }
+
+    public void Attack(Player target) {
+
+    }
+
+    public void Defend() {
+
+    }
+
+    public void TakeDamage(int damage) {
+
+    }
+
+    public void Heal(int health) {
+
+    }
+
+    public boolean isABoss() {
+        return false;
+    }
+
+    public void Sound() {
+
     }
 
     public int getHealth() {
@@ -67,4 +115,15 @@ public abstract class BasicMonster implements Monster {
     public void setName(String name) {
         this.name = name;
     }
+
+    public void setDescription(String desc) {
+        this.description = desc;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+
+
 }

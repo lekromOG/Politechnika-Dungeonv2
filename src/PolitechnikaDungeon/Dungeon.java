@@ -13,7 +13,7 @@ import org.json.JSONObject;
 import Monsters.*;
 
 import java.util.List;
-import java.util.random.RandomGenerator;
+import java.util.Random;
 
 public class Dungeon {
     private static Room currentLevel;
@@ -38,6 +38,7 @@ public class Dungeon {
 
     /* Setters */
     public void SetLevel(int level) {
+
     }
 
     /* Getters */
@@ -52,10 +53,7 @@ public class Dungeon {
         // Make monster
 
         Monster m = GenerateMonsterFromDepth();
-        Room encounteRoom = new EncounterRoom(m);
-
-
-        return null;
+        return new EncounterRoom(m);
     }
 
     private void SetCurrentDepth(final int d) {
@@ -67,16 +65,44 @@ public class Dungeon {
         // Parse json
         // For now return random monster
 
+        BasicMonster simpleMonsterObject = new BasicMonster();
+        Random rand = new Random();
+
         System.out.println(monstersJSONObject);
         JSONArray monsters = monstersJSONObject.getJSONArray("monsters");
 
-        for (int i = 0; i < monsters.length(); i++) {
-            JSONObject monster = monsters.getJSONObject(i);
-            System.out.println(monster.getInt("id"));
+        final int monstersNum = monsters.length();
+        final int randomMonsterNum = rand.nextInt(monstersNum);
 
-        }
+        JSONObject simpleMonsterJSONObj = (JSONObject) monsters.get(randomMonsterNum);
+        final String sMonsterName = simpleMonsterJSONObj.getString("name");
+        final String sMonsterDesc = simpleMonsterJSONObj.getString("description");
+        final int    sMonsterHlth = simpleMonsterJSONObj.getInt("health");
+        final int    sMonsterAttc = simpleMonsterJSONObj.getInt("attackPower");
+        final int    sMonsterDefs = simpleMonsterJSONObj.getInt("defense");
+
+        simpleMonsterObject.setName(sMonsterName);
+        simpleMonsterObject.setDescription(sMonsterDesc);
+        simpleMonsterObject.setHealth(sMonsterHlth);
+        simpleMonsterObject.setAttack(sMonsterAttc);
+        simpleMonsterObject.setDefense(sMonsterDefs);
+
+        return simpleMonsterObject;
+    }
+
+    private Room ChooseNextRoom() {
+
+        // Create next room
 
         return null;
     }
 
+    public void PlayCurrentLevel() {
+
+         currentLevel.Interact();
+
+         if (currentLevel.getIsRoomBeaten()) {
+            currentLevel = ChooseNextRoom();
+         }
+    }
 }
