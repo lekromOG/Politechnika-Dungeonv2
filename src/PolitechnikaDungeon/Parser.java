@@ -1,8 +1,11 @@
 package PolitechnikaDungeon;
 
+import java.io.IOException;
+import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.nio.file.Paths;
 
 public class Parser {
 
@@ -73,6 +76,10 @@ public class Parser {
             actionToReturn = Action.NOT_SPECIFIC;
         }
         return actionToReturn;
+    }
+
+    public String readFileAsString(String filePath) throws IOException {
+        return new String(Files.readAllBytes(Paths.get(filePath)));
     }
 
     public Context GetCurrentContext() {

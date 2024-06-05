@@ -1,0 +1,101 @@
+{
+    "monsters": [
+      {
+        "id": 1,
+        "name": "Czarnuch",
+        "description": "A small, black creature with sharp teeth and a cunning cock.",
+        "health": 30,
+        "attackPower": 5,
+        "defense": 2,
+        "abilities": [
+          {
+            "name": "Slash",
+            "description": "A quick slash with a rusty dagger.",
+            "damage": 7
+          },
+          {
+            "name": "Dodge",
+            "description": "Quickly dodges an attack, reducing damage.",
+            "effect": "reduceDamage",
+            "value": 2
+          }
+        ],
+        "loot": [
+          {
+            "item": "Gold Coin",
+            "quantity": 5
+          },
+          {
+            "item": "Rusty Dagger",
+            "quantity": 1
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "George Floyd Negroid",
+        "description": "Bill's secret project Microsoft black cyborg",
+        "health": 100,
+        "attackPower": 15,
+        "defense": 10,
+        "abilities": [
+          {
+            "name": "Smash",
+            "description": "A powerful smash with a club.",
+            "damage": 20
+          },
+          {
+            "name": "Regenerate",
+            "description": "Slowly regenerates health over time.",
+            "effect": "regenerateHealth",
+            "value": 5
+          }
+        ],
+        "loot": [
+          {
+            "item": "Gold Coin",
+            "quantity": 20
+          },
+          {
+            "item": "Troll Hide",
+            "quantity": 1
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Dragon",
+        "description": "A fearsome dragon with fiery breath and impenetrable scales.",
+        "health": 300,
+        "attackPower": 40,
+        "defense": 25,
+        "abilities": [
+          {
+            "name": "Fire Breath",
+            "description": "Unleashes a torrent of fire, burning everything in its path.",
+            "damage": 50
+          },
+          {
+            "name": "Flight",
+            "description": "Takes to the sky, avoiding ground attacks.",
+            "effect": "avoidGroundAttacks",
+            "value": true
+          }
+        ],
+        "loot": [
+          {
+            "item": "Gold Coin",
+            "quantity": 100
+          },
+          {
+            "item": "Dragon Scale",
+            "quantity": 5
+          },
+          {
+            "item": "Ancient Sword",
+            "quantity": 1
+          }
+        ]
+      }
+    ]
+  }

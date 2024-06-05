@@ -6,11 +6,14 @@ package PolitechnikaDungeon;/*
 * - for deciding what loot
 * */
 
-
 import Rooms.EncounterRoom;
 import Rooms.Room;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import Monsters.*;
 
 import java.util.List;
+import java.util.random.RandomGenerator;
 
 public class Dungeon {
     private static Room currentLevel;
@@ -22,11 +25,14 @@ public class Dungeon {
 
     private List<Room> roomLevels;
 
-    public Dungeon() {
+    private static JSONObject monstersJSONObject;
 
+    public Dungeon(final JSONObject jo) {
         // Make first level
-        currentLevel = new EncounterRoom(currentDepth);
 
+        SetCurrentDepth(0);
+        monstersJSONObject = jo;
+        currentLevel = MakeEncounterRoom();
 
     }
 
@@ -41,4 +47,37 @@ public class Dungeon {
 
     private void IncrementLevel() {
     }
+
+    private Room MakeEncounterRoom() {
+        // Make monster
+
+        Monster m = GenerateMonsterFromDepth();
+        Room encounteRoom = new EncounterRoom(m);
+
+
+        return null;
+    }
+
+    private void SetCurrentDepth(final int d) {
+        currentDepth = d;
+    }
+
+    private Monster GenerateMonsterFromDepth() {
+
+        // Parse json
+        // For now return random monster
+
+        System.out.println(monstersJSONObject);
+        JSONArray monsters = monstersJSONObject.getJSONArray("monsters");
+
+        for (int i = 0; i < monsters.length(); i++) {
+            JSONObject monster = monsters.getJSONObject(i);
+
+            System.out.println(monster.getInt("id"));
+
+        }
+
+        return null;
+    }
+
 }

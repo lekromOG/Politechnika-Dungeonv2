@@ -1,6 +1,16 @@
 package PolitechnikaDungeon;
+import org.json.*;
+import org.json.JSONException;
+import org.json.JSONObject;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
-
+import static java.nio.file.Files.newInputStream;
 
 public class Engine {
     private static Player player;
@@ -9,12 +19,16 @@ public class Engine {
     private static Dungeon dungeon;
 //  private static Rooms.Room currentRoom;
 
+    private static JSONObject monstersJSONObject;
+
     public Engine() {
         Engine.state = GameState.RUNNING;
         parser = new Parser();
     }
 
     public int Run() {
+
+        int exitCode = 0;
 
         // Setup New Game (what to setup)?
         // Maybe multiple classes of the player?
@@ -29,7 +43,17 @@ public class Engine {
         final String name = parser.Prompt("(Enter your name): ");
         player.SetName(name);
 
+        try {
+            ParseMonsterJSONAndLoadObject();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Couldn't load JSON... :(");
+            exitCode = -1;
+            return exitCode;
+        }
         SetupNewDungeon();
+
+//         Main loop
 
         return 0;
     }
@@ -99,14 +123,19 @@ public class Engine {
    }
 
    private static void SetupNewDungeon() {
-        dungeon = new Dungeon();
+        dungeon = new Dungeon(monstersJSONObject);
 
    }
 
-   private static void ParseMonsterJSON() {
+   private static void ParseMonsterJSONAndLoadObject() throws IOException {
 
-        Parser
+        try {
+            Path path = Paths.get("src/PolitechnikaDungeon/monsters.json");
+            String jsonString = parser.readFileAsString(path.toString());
+            monstersJSONObject = new JSONObject(jsonString);
 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
    }
-
 }
