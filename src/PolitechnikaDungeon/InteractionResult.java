@@ -10,5 +10,6 @@ public class InteractionResult {
     public int damageDealtToMonster;
     public boolean isMonsterKilled;
     public boolean isItemTaken;
-
+    public boolean isItemUsed;
+    public boolean playerWantstoExit;
 }

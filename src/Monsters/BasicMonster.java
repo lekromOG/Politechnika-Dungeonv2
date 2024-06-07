@@ -124,6 +124,4 @@ public class BasicMonster implements Monster {
         return this.description;
     }
 
-
-
 }

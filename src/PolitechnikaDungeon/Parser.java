@@ -40,7 +40,15 @@ public class Parser {
         String[] menuArray = new String[]{"new", "load", "quit"};
         inputContextMap.put(Context.MENU, menuArray);
         stringActionMap.put(menuArray[0], Action.NEW_GAME);
+        stringActionMap.put(menuArray[1], Action.LOAD_GAME);
+        stringActionMap.put(menuArray[2], Action.QUIT);
 
+        String[] fightArray = new String[]{"Attack", "Defend", "Use item", "Flee"};
+        inputContextMap.put(Context.FIGHT, fightArray);
+        stringActionMap.put(fightArray[0], Action.ATTACK);
+        stringActionMap.put(fightArray[1], Action.DEFEND);
+        stringActionMap.put(fightArray[2], Action.USE_ITEM);
+        stringActionMap.put(fightArray[3], Action.FLEE);
     }
 
     /* Prompt user for action

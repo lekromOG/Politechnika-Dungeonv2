@@ -3,7 +3,7 @@ package PolitechnikaDungeon;
 public class Main {
     public static void main(String[] args) {
         Engine engine = new Engine();
-        if (engine.Run() == 0) {
+        if (engine.Run() == GameState.EXITING) {
             System.out.println("Thanx for playing Politechnika Dungeon!");
             // No objects here - this is why we have engine.Run()
         } else {
@@ -66,36 +66,11 @@ public class Main {
 *  - Pavlik (Ranger)
 *  - Mario the Saint (Mage)
 *  - Dziekan from Bangladesh (Cleric)
-*  - Florg Geoid (Negromancer)
 *  - Discrete King (Mage)
 *  - Hungarian Mario (Warrior)
 *  - The King (Wizard)
 *  - Elizabeth Schabat (Orc Warrior)
 *  - The judge (Paladin)
-*  - Jean Pedo-Feel II (Pope) (throws creampuffs)) if student less than 18 .....
 *  -
-*
-* S U P E R N I G G E R
-* ░░░░░░░░░░░░░▄▄▀▀▀▀▀▀▄▄
-░░░░░░░░░░▄▄▀▄▄▄█████▄▄▀▄
-░░░░░░░░▄█▀▒▀▀▀█████████▄█▄
-░░░░░░▄██▒▒▒▒▒▒▒▒▀▒▀▒▀▄▒▀▒▀▄
-░░░░▄██▀▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█▄
-░░░░██▀▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█▌
-░░░▐██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▐█
-░▄▄███▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█
-▐▒▄▀██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▐▌
-▌▒▒▌▒▀▒▒▒▒▒▒▄▀▀▄▄▒▒▒▒▒▒▒▒▒▒▒▒█▌
-▐▒▀▒▌▒▒▒▒▒▒▒▄▄▄▄▒▒▒▒▒▒▒▀▀▀▀▄▒▐
-░█▒▒▌▒▒▒▒▒▒▒▒▀▀▒▀▒▒▐▒▄▀██▀▒▒▒▌
-░░█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▐▒▒▒▒▒▒▒▒█
-░░░▀▌▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▌▒▒▒▒▒▒▄▀
-░░░▐▒▒▒▒▒▒▒▒▒▄▀▐▒▒▒▒▒▐▒▒▒▒▄▀
-░░▄▌▒▒▒▒▒▒▒▄▀▒▒▒▀▄▄▒▒▒▌▒▒▒▐▀▀▀▄▄▄
-▄▀░▀▄▒▒▒▒▒▒▒▒▀▀▄▄▄▒▄▄▀▌▒▒▒▌░░░░░░
-▐▌░░░▀▄▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▄▀░░░░░░░
-░█░░░░░▀▄▄▒▒▒▒▒▒▒▒▒▒▒▒▄▀░█░░░░░░░
-░░█░░░░░░░▀▄▄▄▒▒▒▒▒▒▄▀░░░░█░░░░░░
-░░░█░░░░░░░░░▌▀▀▀▀▀▀▐░░░░░▐▌░░░░░
 *
 * */

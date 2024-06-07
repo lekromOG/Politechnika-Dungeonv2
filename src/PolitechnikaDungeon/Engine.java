@@ -51,16 +51,33 @@ public class Engine {
         }
         SetupNewDungeon();
 
+        parser.SetCurrentContext(Context.FIGHT);
+        System.out.println(parser.ReturnPlayerActionFromInput("test: "));
+
+        int loopState = 0;
+
 //         Main loop
-
         while (state != GameState.RUNNING) {
-
             // if not room beaten, don't advance
-            dungeon.PlayCurrentLevel();
 
+            /*
+             * TODO:
+             * Handle exiting the game ()
+             *
+             *
+             *
+             */
+
+            loopState = dungeon.PlayCurrentLevel();
+            if (loopState == -1) {
+                state = GameState.EXITING;
+            }
+
+            Room newRoom = dungeon.ChooseNextRoom();
+            dungeon.SetCurrentLevel(newRoom);
         }
 
-        return 0;
+        return state;
     }
 
     private static int MainLoop() {
@@ -128,8 +145,7 @@ public class Engine {
    }
 
    private static void SetupNewDungeon() {
-        dungeon = new Dungeon(monstersJSONObject);
-
+        dungeon = new Dungeon(monstersJSONObject, player, parser);
    }
 
    private static void ParseMonsterJSONAndLoadObject() throws IOException {

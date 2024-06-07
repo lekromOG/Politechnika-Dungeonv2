@@ -6,8 +6,7 @@ package PolitechnikaDungeon;/*
 * - for deciding what loot
 * */
 
-import Rooms.EncounterRoom;
-import Rooms.Room;
+import Rooms.*;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import Monsters.*;
@@ -20,6 +19,10 @@ public class Dungeon {
     private int mobsPerLevel = 3;
     final private static int INITIAL_CHANCE_OF_LOOT = 100;
     final private static int MAX_LEVELS = 15;
+    final private RoomType[] rooms = {};
+    private static Context gameContext;
+    private static Player player;
+    private static Parser parser;
 
     private static int currentDepth;
 
@@ -27,13 +30,13 @@ public class Dungeon {
 
     private static JSONObject monstersJSONObject;
 
-    public Dungeon(final JSONObject jo) {
+    public Dungeon(final JSONObject jo, Player player, Parser parser) {
         // Make first level
-
         SetCurrentDepth(0);
         monstersJSONObject = jo;
         currentLevel = MakeEncounterRoom();
-
+        player = player;
+        parser = parser;
     }
 
     /* Setters */
@@ -90,19 +93,45 @@ public class Dungeon {
         return simpleMonsterObject;
     }
 
-    private Room ChooseNextRoom() {
-
+    public Room ChooseNextRoom() {
         // Create next room
-
-        return null;
+        /* TODO:
+         * 1. Uzyc random number generator i wylosowac liczbe
+         * 2. W zaleznosci od tej liczby, currentLevel = randomLevel
+         */
+        Random rand = new Random();
+        int randomNum = rand.nextInt(MAX_LEVELS);
+        switch (rooms[randomNum]) {
+            case SHOP -> currentLevel = new Shop();
+            case TOILET -> currentLevel = new Toilet();
+            case ENCOUNTER -> currentLevel = MakeEncounterRoom();
+            case AUDITORIUM -> currentLevel = new Auditorium();
+            case CISCO_LABS -> currentLevel = new CiscoLabs();
+            case BOSS_ROOM -> currentLevel = new BossRoom();
+        }
+        return currentLevel;
     }
 
-    public void PlayCurrentLevel() {
+    public void SetCurrentLevel(Room r) {
+        currentLevel = r;
+    }
 
-         currentLevel.Interact();
+    public int PlayCurrentLevel() {
+        InteractionResult interactionResult = new InteractionResult();
+        int state = 0;
 
-         if (currentLevel.getIsRoomBeaten()) {
-            currentLevel = ChooseNextRoom();
-         }
+        while (!currentLevel.getIsRoomBeaten()) {
+            interactionResult = currentLevel.Interact(player, parser);
+        }
+
+        /* TODO:
+         * 1. Parse interactionResult
+         * 2. If interactionResult.playerWantsToExit, return state = -1 -> to wyjdzie z gry
+         * 3.
+         *
+         */
+
+
+        return state;
     }
 }
