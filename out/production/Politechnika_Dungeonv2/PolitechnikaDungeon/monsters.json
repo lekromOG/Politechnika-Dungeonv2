@@ -104,12 +104,12 @@
           },
           {
             "id": 4,
-            "name": "Prime Minister",
-            "description": "A high-ranking official with a complex agenda.",
+            "name": "Prime (Napuj)",
+            "description": "A high-ranking official napuj with a complex ptsd.",
             "health": 10,
             "attackPower": 20,
             "defense": 100,
-            "monsterCreatedTalk": "This is a critical moment.",
+            "monsterCreatedTalk": "Pij prajm get problemy żołądkowe",
             "deathMessage": "My tenure ends here...",
             "abilities": [
               {
@@ -140,12 +140,12 @@
           },
           {
             "id": 5,
-            "name": "Mystic Scholar",
+            "name": "Mystic Scholar (Premier 20 Rzeczypospolitej Marokańskiej)",
             "description": "A knowledgeable and cunning individual.",
             "health": 1,
             "attackPower": 100,
             "defense": 100,
-            "monsterCreatedTalk": "Let me share my wisdom...",
+            "monsterCreatedTalk": "Let me share my wisdom (shitpost)...",
             "deathMessage": "The knowledge... it's lost...",
             "abilities": [
               {
@@ -178,11 +178,11 @@
           {
             "id": 6,
             "name": "Szymon Franz",
-            "description": "A very skilled worker from a major tech company.",
-            "health": 2137,
-            "attackPower": 100,
+            "description": "A very poorly skilled worker from a minor tech company.",
+            "health": 100,
+            "attackPower": 50,
             "defense": 100,
-            "monsterCreatedTalk": "Ready for beef.",
+            "monsterCreatedTalk": "Makdonald will be served.",
             "deathMessage": "Logging off...",
             "abilities": [
               {
@@ -216,8 +216,8 @@
             "id": 7,
             "name": "Kacper Klimas",
             "description": "The strongest person in the world after your grandma.",
-            "health": 2499,
-            "attackPower": 500,
+            "health": 200,
+            "attackPower": 100,
             "defense": 500,
             "monsterCreatedTalk": "I will fuck you!",
             "deathMessage": "Even the strong fall...",
