@@ -36,8 +36,7 @@ public class Inventory {
         return inventoryWeight;
     }
 
-    public void setInventoryWeight(int inventoryWeight) { this.inventoryWeight = inventoryWeight;
-    }
+    public void setInventoryWeight(int inventoryWeight) { this.inventoryWeight = inventoryWeight;}
 
     public int getCurrentItems() {
         return currentItems;
@@ -54,20 +53,25 @@ public class Inventory {
                 System.out.print(items.get(i).getName() + " ");
             }
         } else {
-            System.out.println("INVENTORY IS EMPTY");
+            System.out.println("Your inventory is empty!");
         }
     }
 
-    public void setCharacterItem() {
+    public void ChooseItem(Item item) {items.set(0, item);}
 
-    }
-
-    public void useItem() {
-
-    }
-
-    public void dropItem() {
-
+    public void dropItem(Item chosen) {
+        int i = 0;
+        if (currentItems != 0) {
+            while (i < currentItems) {
+                if (items.get(i) == chosen) {
+                    items.remove(i);
+                    break;
+                }
+            }
+            System.out.println("Did not find chosen item!");
+        } else {
+            System.out.println("Your inventory is empty!");
+        }
     }
 
     public void SetIsFull() {

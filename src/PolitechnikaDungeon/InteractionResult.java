@@ -13,6 +13,7 @@ public class InteractionResult {
     public boolean isItemUsed;
     public boolean playerWantstoExit;
     public boolean actionIsNothing;
+    public boolean playerWantsToFlee;
 
     public void PrintResult(Context context) {
 

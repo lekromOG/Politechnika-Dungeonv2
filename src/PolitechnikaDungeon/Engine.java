@@ -24,49 +24,29 @@ public class Engine {
         parser = new Parser();
     }
 
-    public int Run() {
+    public GameState Run() {
 
-        int exitCode = 0;
-
-        // Setup New Game (what to setup)?
-        // Maybe multiple classes of the player?
-        // Print menu
-
-        // prompt
-
-        player = new Player();
+        player = new Player("Link");
 
         System.out.println("Welcome to Politechnika Politechnika Dungeon!");
         System.out.println("What is Thine name?");
 //        final String name = parser.Prompt("(Enter your name): ");
-        player.SetName("Nigga");
+        player.SetName("Link");
 
         try {
             ParseMonsterJSONAndLoadObject();
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println("Couldn't load JSON... :(");
-            exitCode = -1;
-            return exitCode;
+            return GameState.ERROR;
         }
         SetupNewDungeon();
 
         parser.SetCurrentContext(Context.FIGHT);
-        System.out.println(parser.ReturnPlayerActionFromInput("test: "));
-
         int loopState = 0;
 
 //         Main loop
         while (state != GameState.RUNNING) {
-            // if not room beaten, don't advance
-
-            /*
-             * TODO:
-             * Handle exiting the game ()
-             *
-             *
-             *
-             */
 
             loopState = dungeon.PlayCurrentLevel();
             if (loopState == -1) {
@@ -79,17 +59,8 @@ public class Engine {
         return state;
     }
 
-    public static void SetupNewGame() {
-    }
-
     private static boolean LoadGame() {
         return true;
-    }
-
-    private static void PrintMenuActions() {
-        System.out.println("(N)ew Game");
-        System.out.println("(L)oad Game");
-        System.out.println("(Q)uit Game");
     }
 
    private static void SetupNewDungeon() {

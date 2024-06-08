@@ -47,7 +47,7 @@ public class Parser {
         inputContextMap.put(Context.FIGHT, fightArray);
         stringActionMap.put(fightArray[0], Action.ATTACK);
         stringActionMap.put(fightArray[1], Action.DEFEND);
-        stringActionMap.put(fightArray[2], Action.USE_ITEM);
+        stringActionMap.put(fightArray[2], Action.CHOOSE_ITEM);
         stringActionMap.put(fightArray[3], Action.FLEE);
         stringActionMap.put(fightArray[4], Action.QUIT);
     }

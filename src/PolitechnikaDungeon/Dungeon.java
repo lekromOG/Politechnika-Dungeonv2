@@ -123,12 +123,19 @@ public class Dungeon {
         InteractionResult interactionResult = new InteractionResult();
         int state = 0;
 
-        while (!currentLevel.getIsRoomBeaten()) {
-            interactionResult = currentLevel.Interact(player, parser);
+        while (!currentLevel.getIsRoomBeaten() &&
+                !(interactionResult.playerWantsToFlee &&
+                  interactionResult.playerWantstoExit)) {
+                interactionResult = currentLevel.Interact(player, parser);
         }
 
         if (interactionResult.playerWantstoExit) {
             state = -1;
+        }
+
+        if (interactionResult.playerWantsToFlee) {
+            System.out.println("You flee from the fugging roomes :DD XDD");
+            state = -2;
         }
 
         /* TODO:

@@ -6,8 +6,10 @@ public abstract class Item {
     private int damage;
     private int strength;
 
-    public Item() {
-        this.name = "PolitechnikaDungeon.Item";
+    public Item(String name, int damage, int strength) {
+        this.name = name;
+        this.damage = damage;
+        this.strength = strength;
     }
 
     public String getName() {
@@ -17,7 +19,6 @@ public abstract class Item {
     public void setName(String name) {
         this.name = name;
     }
-
 
     public int getDamage() {
         return damage;
@@ -34,4 +35,6 @@ public abstract class Item {
     public void setStrength(int strength) {
         this.strength = strength;
     }
+
+    public boolean isUsable() {return true;}
 }

@@ -55,10 +55,14 @@ public class BasicMonster implements Monster {
     }
 
     public void TakeDamage(int damage) {
+        this.health -= damage;
+        System.out.println(this.name + "ouchie! I just took" + damage + ":(");
 
     }
 
     public int Heal(int health) {
+
+        return 0;
 
     }
 

@@ -5,6 +5,7 @@ import PolitechnikaDungeon.Action;
 import PolitechnikaDungeon.InteractionResult;
 import PolitechnikaDungeon.Player;
 import PolitechnikaDungeon.Parser;
+import PolitechnikaDungeon.Item;
 
 public class EncounterRoom extends Room {
     private Monster monsterEncounter;
@@ -17,7 +18,7 @@ public class EncounterRoom extends Room {
 
     /* Play the actual room (interact with player).
      * Return some data stating the outcome of player interaction
-     *
+     * If kupowy kamil dies, world dies of shit
      */
     @Override
     public InteractionResult Interact(Player player, final Parser parser) {
@@ -25,12 +26,15 @@ public class EncounterRoom extends Room {
         if (isPlayerTurn) {
             Action action = parser.ReturnPlayerActionFromInput("(Choose your action: )");
             switch (action) {
-                case ATTACK -> player.Attack(monsterEncounter, player.currentitem);
-                case DEFEND -> player.defend;
-                case FLEE -> player.runAway;
-                case USE_ITEM -> player.setcurrentItem;
+                case ATTACK -> player.Attack(monsterEncounter, player.getPlayerCurrentItem());
+                case DEFEND -> player.Defend();
+                case FLEE -> {
+                    result.playerWantsToFlee = true;
+                    System.out.println(player.GetName() + " flees!");
+                }
+               // case CHOOSE_ITEM -> player.ChooseItem() //player.getPlayerInventory().ChooseItem();
                 case QUIT -> result.playerWantstoExit = true;
-                default: {
+                default -> {
                     System.out.println("Unrecognizable action!");
                     result.actionIsNothing = true;
                     return result;
@@ -44,7 +48,7 @@ public class EncounterRoom extends Room {
                 System.out.println("GAME OVER! PLAYER DIED.");
                 result.playerWantstoExit = true;
             } else {
-                System.out.println(STR."Monster took \{damageByMonster} HP. \{player.getHealth()} remaining!");
+                System.out.println("Player took " + damageByMonster + " HP. " + player.getHealth() + " remaining!");
             }
         }
         /* TODO:
@@ -64,8 +68,6 @@ public class EncounterRoom extends Room {
 
         // TODO: Print what player has done and what monster has done.
         //       Print result of the turn
-
-        result.PrintResult(Context);
 
         this.TogglePlayerTurn();
         return result;

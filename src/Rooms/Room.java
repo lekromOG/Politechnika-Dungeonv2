@@ -15,10 +15,6 @@ public abstract class Room {
     public abstract InteractionResult Interact(Player player, Parser parser);
     public abstract boolean getIsRoomBeaten();
     public BasicMonster createFromJSON () {
-        switch (Monsters) {
-            case
-
-        }
         return null;
     }
 }
