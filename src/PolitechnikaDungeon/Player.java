@@ -2,11 +2,10 @@ package PolitechnikaDungeon;
 
 import Monsters.Monster;
 
+import java.util.ArrayList;
 import java.util.Timer;
 
 public class Player {
-//    private Timer timer;
-//    private int remainingTime;
     private final int BASE_HEALTH = 250;
     private final int BASE_DEFENSE = 50;
     private final int BASE_MANA = 100;
@@ -23,6 +22,12 @@ public class Player {
         this.defense = BASE_DEFENSE;
         this.mana    = BASE_MANA;
         this.name    = name;
+
+        ArrayList<Item> basicInventory = new ArrayList<Item>();
+        Item axeItem = new Axe("Guwniana siekiera XD", 10, 5);
+        basicInventory.add(axeItem);
+        Inventory playerInventory = new Inventory(basicInventory);
+        setPlayerInventory(playerInventory);
     }
 
     public void Attack(Monster monster, Item item) {
@@ -79,11 +84,10 @@ public class Player {
         this.health = health;
     }
 
-    public Inventory getPlayerInventory() {return playerInventory;}
+    public Inventory getPlayerInventory() {return this.playerInventory;}
 
-    public void setPlayerInventory(Inventory playerInventory) {this.playerInventory = playerInventory;}
+    public void setPlayerInventory(Inventory _playerInventory) {this.playerInventory = _playerInventory;}
 
     public Item getPlayerCurrentItem() {return getPlayerInventory().getItems().getFirst();}
 }
-
 

@@ -28,13 +28,13 @@ public class Dungeon {
     private List<Room> roomLevels;
     private static JSONObject monstersJSONObject;
 
-    public Dungeon(final JSONObject jo, Player player, Parser parser) {
+    public Dungeon(final JSONObject jo, Player _player, Parser _parser) {
         // Make first level
         SetCurrentDepth(0);
         monstersJSONObject = jo;
         currentLevel = MakeEncounterRoom();
-        player = player;
-        parser = parser;
+        player = _player;
+        parser = _parser;
     }
 
     /* Setters */

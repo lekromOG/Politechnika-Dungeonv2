@@ -6,18 +6,16 @@ public class Inventory {
     private ArrayList<Item> items;
     private int capacity = 10;
     private int inventoryWeight;
-    private int currentItems = 0;
+    private int currentItems = 1;
 
     private boolean isFull = false;
 
-    public Inventory() {
-        this.items = new ArrayList<>(capacity);
-        this.inventoryWeight = 0;
-        this.currentItems = 0;
+    public Inventory(final ArrayList<Item> arrayOfItems) {
+        this.items = new ArrayList<Item>(arrayOfItems);
     }
 
     public ArrayList<Item> getItems() {
-        return items;
+        return this.items;
     }
 
     public void setItems(ArrayList items) {
@@ -25,7 +23,7 @@ public class Inventory {
     }
 
     public int getCapacity() {
-        return capacity;
+        return this.capacity;
     }
 
     public void setCapacity(int capacity) {
@@ -33,13 +31,13 @@ public class Inventory {
     }
 
     public int getInventoryWeight() {
-        return inventoryWeight;
+        return this.inventoryWeight;
     }
 
     public void setInventoryWeight(int inventoryWeight) { this.inventoryWeight = inventoryWeight;}
 
     public int getCurrentItems() {
-        return currentItems;
+        return this.currentItems;
     }
 
     public void setCurrentItems(int currentItems) {

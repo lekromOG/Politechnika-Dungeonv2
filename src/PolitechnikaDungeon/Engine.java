@@ -20,7 +20,7 @@ public class Engine {
     private static JSONObject monstersJSONObject;
 
     public Engine() {
-        Engine.state = GameState.RUNNING;
+        state = GameState.RUNNING;
         parser = new Parser();
     }
 
@@ -46,7 +46,7 @@ public class Engine {
         int loopState = 0;
 
 //         Main loop
-        while (state != GameState.RUNNING) {
+        while (state == GameState.RUNNING) {
 
             loopState = dungeon.PlayCurrentLevel();
             if (loopState == -1) {

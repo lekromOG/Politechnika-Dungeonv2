@@ -12,8 +12,7 @@ public class EncounterRoom extends Room {
     private boolean isPlayerTurn = true;
 
     public EncounterRoom(Monster monsterToPlace) {
-//        monsterEncounter = CreateMonsterEncounter();
-
+        monsterEncounter = monsterToPlace;
     }
 
     /* Play the actual room (interact with player).
@@ -69,16 +68,14 @@ public class EncounterRoom extends Room {
         // TODO: Print what player has done and what monster has done.
         //       Print result of the turn
 
+        System.out.println(player.GetName() + " health: " + player.getHealth());
+        System.out.println(monsterEncounter.getName() + " health: " + monsterEncounter.getHealth());
+
         this.TogglePlayerTurn();
         return result;
     }
 
     private Monster GenerateMonster(final int depth) {
-        return null;
-    }
-
-    private Monster CreateMonsterEncounter(final int depth) {
-
         return null;
     }
 
