@@ -26,7 +26,7 @@ public class Engine {
 
     public GameState Run() {
 
-        player = new Player("Wojownik Hemoroidalnego Odbytu");
+        player = new Player("");
 
         System.out.println("Welcome to Politechnika Politechnika Dungeon!");
         System.out.println("What is Thine name?");

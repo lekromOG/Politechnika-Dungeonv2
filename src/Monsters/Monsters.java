@@ -1,5 +1,3 @@
 package Monsters;
 
-public enum Monsters {
-    COCONUT, CHRIS
-}
+public enum Monsters {}

@@ -65,7 +65,7 @@ public class Dungeon {
         Monster m = GenerateMonsterFromDepth();
 
         System.out.println("You descend further into the dungeones...");
-        System.out.println("Smrut kokosinskiego jest coraz mocniejszy....");
+        System.out.println("Smrut alkoholu jest coraz mocniejszy....");
         System.out.println("You have encountered a " + m.getName() + "!");
         System.out.println(m.getCreatedTalk());
 
@@ -168,13 +168,6 @@ public class Dungeon {
             ((EncounterRoom) currentLevel).GetMonsterEncounter().PrintDeathMessage();
             ((EncounterRoom) currentLevel).GetMonsterEncounter().PrintItemsDropped();
         }
-
-        /* TODO:
-         * 1. Parse interactionResult
-         * 2. If interactionResult.playerWantsToExit, return state = -1 -> to wyjdzie z gry
-         * 3.
-         *
-         */
 
         return state;
     }
