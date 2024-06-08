@@ -2,21 +2,23 @@
     "monsters": [
       {
         "id": 1,
-        "name": "Czarnuch",
-        "description": "A small, black creature with sharp teeth and a cunning cock.",
-        "health": 30,
-        "attackPower": 5,
-        "defense": 2,
+        "name": "Chris Von Sea",
+        "description": "Final Boss Approaches...",
+        "health": 30000000,
+        "attackPower": 1000000,
+        "defense": 1000000,
+        "monsterCreatedTalk": "You are not prepared for this beef",
+        "deathMessage": "I never lose",
         "abilities": [
           {
-            "name": "Slash",
-            "description": "A quick slash with a rusty dagger.",
-            "damage": 7
+            "name": "Matrix",
+            "description": "Throws you into the matrix",
+            "damage": 1000000
           },
           {
-            "name": "Dodge",
-            "description": "Quickly dodges an attack, reducing damage.",
-            "effect": "reduceDamage",
+            "name": "Tensor Dodge",
+            "description": "Dodges the attack becoming invincible",
+            "effect": "nullifiesDamage",
             "value": 2
           }
         ],
@@ -26,76 +28,298 @@
             "quantity": 5
           },
           {
-            "item": "Rusty Dagger",
+            "item": "Politechnika Crown",
             "quantity": 1
           }
         ]
       },
-      {
-        "id": 2,
-        "name": "George Floyd Negroid",
-        "description": "Bill's secret project Microsoft black cyborg",
-        "health": 100,
-        "attackPower": 15,
-        "defense": 10,
-        "abilities": [
           {
-            "name": "Smash",
-            "description": "A powerful smash with a club.",
-            "damage": 20
+            "id": 2,
+            "name": "Cyber Krzysio",
+            "description": "A top-secret krzysio developed by a politechnics",
+            "health": 100,
+            "attackPower": 15,
+            "defense": 10,
+            "monsterCreatedTalk": "Kto mnie obudzil z pijanskiego snu.",
+            "monsterTakenDamageMessage": "Aua",
+            "deathMessage": "Dobranoc",
+            "abilities": [
+              {
+                "name": "Laser Blast",
+                "description": "Fires a powerful laser beam.",
+                "damage": 20
+              },
+              {
+                "name": "Shield Recharge",
+                "description": "Recharges defensive shields.",
+                "value": 5
+              }
+            ],
+            "loot": [
+              {
+                "item": "Microchip",
+                "quantity": 1
+              },
+              {
+                "item": "Energy Cell",
+                "quantity": 1
+              }
+            ]
           },
           {
-            "name": "Regenerate",
-            "description": "Slowly regenerates health over time.",
-            "effect": "regenerateHealth",
-            "value": 5
-          }
-        ],
-        "loot": [
-          {
-            "item": "Gold Coin",
-            "quantity": 20
+            "id": 3,
+            "name": "Vampire Sorceress",
+            "description": "A cruel and powerful vampire with dark magic.",
+            "health": 80,
+            "attackPower": 40,
+            "defense": 25,
+            "monsterCreatedTalk": "Prepare to meet your doom!",
+            "deathMessage": "I shall return...",
+            "abilities": [
+              {
+                "name": "Dark Magic",
+                "description": "Casts a powerful spell.",
+                "damage": 50
+              },
+              {
+                "name": "Shadow Cloak",
+                "description": "Becomes invisible for a short time.",
+                "value": true
+              }
+            ],
+            "loot": [
+              {
+                "item": "Ancient Tome",
+                "quantity": 1
+              },
+              {
+                "item": "Vampire Fang",
+                "quantity": 1
+              },
+              {
+                "item": "Potion of Night Vision",
+                "quantity": 2
+              }
+            ]
           },
           {
-            "item": "Troll Hide",
-            "quantity": 1
-          }
-        ]
-      },
-      {
-        "id": 3,
-        "name": "Dragon",
-        "description": "A fearsome dragon with fiery breath and impenetrable scales.",
-        "health": 300,
-        "attackPower": 40,
-        "defense": 25,
-        "abilities": [
-          {
-            "name": "Fire Breath",
-            "description": "Unleashes a torrent of fire, burning everything in its path.",
-            "damage": 50
+            "id": 4,
+            "name": "Prime Minister",
+            "description": "A high-ranking official with a complex agenda.",
+            "health": 10,
+            "attackPower": 20,
+            "defense": 100,
+            "monsterCreatedTalk": "This is a critical moment.",
+            "deathMessage": "My tenure ends here...",
+            "abilities": [
+              {
+                "name": "Policy Overhaul",
+                "description": "Implements sweeping changes.",
+                "damage": 10
+              },
+              {
+                "name": "Diplomatic Immunity",
+                "description": "Avoids ground attacks.",
+                "value": true
+              }
+            ],
+            "loot": [
+              {
+                "item": "Gold Coin",
+                "quantity": 100
+              },
+              {
+                "item": "Dragon Scale",
+                "quantity": 5
+              },
+              {
+                "item": "Ancient Sword",
+                "quantity": 1
+              }
+            ]
           },
           {
-            "name": "Flight",
-            "description": "Takes to the sky, avoiding ground attacks.",
-            "effect": "avoidGroundAttacks",
-            "value": true
-          }
-        ],
-        "loot": [
-          {
-            "item": "Gold Coin",
-            "quantity": 100
+            "id": 5,
+            "name": "Mystic Scholar",
+            "description": "A knowledgeable and cunning individual.",
+            "health": 1,
+            "attackPower": 100,
+            "defense": 100,
+            "monsterCreatedTalk": "Let me share my wisdom...",
+            "deathMessage": "The knowledge... it's lost...",
+            "abilities": [
+              {
+                "name": "Political Agitation",
+                "description": "Stirs up powerful discussions.",
+                "damage": 10000000
+              },
+              {
+                "name": "Vote Manipulator",
+                "description": "Influences the outcome of votes.",
+                "effect": "avoidGroundAttacks",
+                "value": true
+              }
+            ],
+            "loot": [
+              {
+                "item": "Ancient Manuscript",
+                "quantity": 1
+              },
+              {
+                "item": "Dragon Scale",
+                "quantity": 5
+              },
+              {
+                "item": "Ancient Sword",
+                "quantity": 1
+              }
+            ]
           },
           {
-            "item": "Dragon Scale",
-            "quantity": 5
+            "id": 6,
+            "name": "Szymon Franz",
+            "description": "A very skilled worker from a major tech company.",
+            "health": 2137,
+            "attackPower": 100,
+            "defense": 100,
+            "monsterCreatedTalk": "Ready for beef.",
+            "deathMessage": "Logging off...",
+            "abilities": [
+              {
+                "name": "System Overload",
+                "description": "Causes a system failure.",
+                "damage": 5
+              },
+              {
+                "name": "AI Assistance",
+                "description": "Uses AI for support.",
+                "effect": "avoidGroundAttacks",
+                "value": true
+              }
+            ],
+            "loot": [
+              {
+                "item": "Swarovski Necklace",
+                "quantity": 1
+              },
+              {
+                "item": "Dragon Scale",
+                "quantity": 5
+              },
+              {
+                "item": "Ancient Sword",
+                "quantity": 1
+              }
+            ]
           },
           {
-            "item": "Ancient Sword",
-            "quantity": 1
+            "id": 7,
+            "name": "Kacper Klimas",
+            "description": "The strongest person in the world after your grandma.",
+            "health": 2499,
+            "attackPower": 500,
+            "defense": 500,
+            "monsterCreatedTalk": "I will fuck you!",
+            "deathMessage": "Even the strong fall...",
+            "abilities": [
+              {
+                "name": "Kregoslup Breaker",
+                "description": "Delivers a powerful punch in the dick.",
+                "damage": 100
+              },
+              {
+                "name": "Heavy Backpack",
+                "description": "Carries a backpack weighing 3 tons.",
+                "value": true
+              }
+            ],
+            "loot": [
+              {
+                "item": "Classic McWrap",
+                "quantity": 2
+              },
+              {
+                "item": "Backpack",
+                "quantity": 1
+              },
+              {
+                "item": "Fitness World Card",
+                "quantity": 1
+              }
+            ]
+          },
+          {
+            "id": 8,
+            "name": "Adam Trzpis",
+            "description": "An agent from an international firm (Katedra Informatyki).",
+            "health": 15,
+            "attackPower": 10,
+            "defense": 100,
+            "monsterCreatedTalk": "Let's get this done.",
+            "deathMessage": "Mission failed...",
+            "abilities": [
+              {
+                "name": "Magnetic Makdonald",
+                "description": "Gets a health boost.",
+                "damage": 100
+              },
+              {
+                "name": "Music Release",
+                "description": "Releases an album.",
+                "damage": 70
+              }
+            ],
+            "loot": [
+              {
+                "item": "Empty Jack Daniels Bottle",
+                "quantity": 1
+              },
+              {
+                "item": "Can of Cola",
+                "quantity": 1
+              },
+              {
+                "item": "Zapierdziane majtki",
+                "quantity": 1
+              }
+            ]
+          },
+          {
+            "id": 9,
+            "name": "Future Student",
+            "description": "A vision of life after graduation.",
+            "health": 1,
+            "attackPower": 0,
+            "defense": 0,
+            "monsterCreatedTalk": "Welcome, what can I get you?",
+            "deathMessage": "The end of the road...",
+            "abilities": [
+              {
+                "name": "Fries Disaster",
+                "description": "Serves poorly made fries.",
+                "damage": 1000
+              },
+              {
+                "name": "Rotten Burger",
+                "description": "A disgusting burger.",
+                "damage": 2000
+              }
+            ],
+            "loot": [
+              {
+                "item": "Broken Dreams",
+                "quantity": 1
+              },
+              {
+                "item": "Stress",
+                "quantity": 1000
+              },
+              {
+                "item": "Debt of a Million Zloty",
+                "quantity": 1
+              }
+            ]
           }
         ]
       }
-    ]
   }
