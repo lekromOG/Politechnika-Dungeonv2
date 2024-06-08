@@ -178,11 +178,11 @@
           {
             "id": 6,
             "name": "Szymon Franz",
-            "description": "A very poorly skilled worker from a minor tech company.",
+            "description": "Just a guy.",
             "health": 100,
             "attackPower": 50,
             "defense": 100,
-            "monsterCreatedTalk": "Makdonald will be served.",
+            "monsterCreatedTalk": "Duuuuuuude.",
             "deathMessage": "Logging off...",
             "abilities": [
               {

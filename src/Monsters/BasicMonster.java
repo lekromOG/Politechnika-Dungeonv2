@@ -58,9 +58,8 @@ public class BasicMonster implements Monster {
     }
 
     public void TakeDamage(int damage) {
-        this.health -= damage;
-        System.out.println(this.name + " ouchie! I just took " + damage + " :(");
-
+        //this.health -= damage;
+        System.out.println("Monster "+ this.name + ": Ouch!!! I just took " + damage + " HP from player!");
     }
 
     public int Heal(int health) {
