@@ -23,11 +23,9 @@ public class Dungeon {
     private static Context gameContext;
     private static Player player;
     private static Parser parser;
-
+    private static boolean wasFinalMonsterBeaten = false;
     private static int currentDepth;
-
     private List<Room> roomLevels;
-
     private static JSONObject monstersJSONObject;
 
     public Dungeon(final JSONObject jo, Player player, Parser parser) {
@@ -99,6 +97,11 @@ public class Dungeon {
          * 1. Uzyc random number generator i wylosowac liczbe
          * 2. W zaleznosci od tej liczby, currentLevel = randomLevel
          */
+
+        if (wasFinalMonsterBeaten) {
+            return new EndRoom();
+        }
+
         Random rand = new Random();
         int randomNum = rand.nextInt(MAX_LEVELS);
         switch (rooms[randomNum]) {
@@ -124,13 +127,16 @@ public class Dungeon {
             interactionResult = currentLevel.Interact(player, parser);
         }
 
+        if (interactionResult.playerWantstoExit) {
+            state = -1;
+        }
+
         /* TODO:
          * 1. Parse interactionResult
          * 2. If interactionResult.playerWantsToExit, return state = -1 -> to wyjdzie z gry
          * 3.
          *
          */
-
 
         return state;
     }

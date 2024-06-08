@@ -1,6 +1,7 @@
 package Monsters;
 
 import Monsters.Monster;
+import PolitechnikaDungeon.Dungeon;
 import PolitechnikaDungeon.Player;
 
 public class BasicMonster implements Monster {
@@ -11,7 +12,6 @@ public class BasicMonster implements Monster {
     private int level;
     private String name;
     private boolean isABoss;
-
     private String description;
 
     public BasicMonster(int health, int attack, int defense, int speed, int level, String name) {
@@ -44,8 +44,10 @@ public class BasicMonster implements Monster {
 
     }
 
-    public void Attack(Player target) {
-
+    public int Attack(Player target) {
+        return getAttack();
+        // TODO: Attack for basic monster
+        //       Should return the damage for InteractionResult
     }
 
     public void Defend() {
@@ -56,7 +58,7 @@ public class BasicMonster implements Monster {
 
     }
 
-    public void Heal(int health) {
+    public int Heal(int health) {
 
     }
 

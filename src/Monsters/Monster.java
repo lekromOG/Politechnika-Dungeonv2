@@ -31,13 +31,13 @@ public interface Monster {
 
     public void setABoss(boolean isABoss);
 
-    public void Attack(Player target);
+    public int Attack(Player target);
 
     public void Defend();
 
     public void TakeDamage(int damage);
 
-    public void Heal(int health);
+    public int Heal(int health);
 
     public void LevelUp();
 

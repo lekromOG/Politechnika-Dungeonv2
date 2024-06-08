@@ -12,4 +12,9 @@ public class InteractionResult {
     public boolean isItemTaken;
     public boolean isItemUsed;
     public boolean playerWantstoExit;
+    public boolean actionIsNothing;
+
+    public void PrintResult(Context context) {
+
+    }
 }

@@ -43,12 +43,13 @@ public class Parser {
         stringActionMap.put(menuArray[1], Action.LOAD_GAME);
         stringActionMap.put(menuArray[2], Action.QUIT);
 
-        String[] fightArray = new String[]{"Attack", "Defend", "Use item", "Flee"};
+        String[] fightArray = new String[]{"Attack", "Defend", "Use item", "Flee", "Quit"};
         inputContextMap.put(Context.FIGHT, fightArray);
         stringActionMap.put(fightArray[0], Action.ATTACK);
         stringActionMap.put(fightArray[1], Action.DEFEND);
         stringActionMap.put(fightArray[2], Action.USE_ITEM);
         stringActionMap.put(fightArray[3], Action.FLEE);
+        stringActionMap.put(fightArray[4], Action.QUIT);
     }
 
     /* Prompt user for action
