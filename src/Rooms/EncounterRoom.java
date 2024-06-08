@@ -22,6 +22,7 @@ public class EncounterRoom extends Room {
     @Override
     public InteractionResult Interact(Player player, final Parser parser) {
         InteractionResult result = new InteractionResult();
+
         if (isPlayerTurn) {
             Action action = parser.ReturnPlayerActionFromInput("(Choose your action: )");
             switch (action) {
@@ -30,6 +31,7 @@ public class EncounterRoom extends Room {
                 case FLEE -> {
                     result.playerWantsToFlee = true;
                     System.out.println(player.GetName() + " flees!");
+                    return result;
                 }
                // case CHOOSE_ITEM -> player.ChooseItem() //player.getPlayerInventory().ChooseItem();
                 case QUIT -> result.playerWantstoExit = true;
@@ -91,4 +93,6 @@ public class EncounterRoom extends Room {
     private void TogglePlayerTurn() {
         this.isPlayerTurn = !this.isPlayerTurn;
     }
+
+    public Monster GetMonsterEncounter() {return this.monsterEncounter;}
 }

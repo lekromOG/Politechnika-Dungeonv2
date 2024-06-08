@@ -26,12 +26,12 @@ public class Engine {
 
     public GameState Run() {
 
-        player = new Player("Link");
+        player = new Player("Wojownik Hemoroidalnego Odbytu");
 
         System.out.println("Welcome to Politechnika Politechnika Dungeon!");
         System.out.println("What is Thine name?");
-//        final String name = parser.Prompt("(Enter your name): ");
-        player.SetName("Link");
+        final String name = parser.Prompt("(Enter your name): ");
+        player.SetName(name);
 
         try {
             ParseMonsterJSONAndLoadObject();
@@ -51,8 +51,9 @@ public class Engine {
             loopState = dungeon.PlayCurrentLevel();
             if (loopState == -1) {
                 state = GameState.EXITING;
+                return state;
             }
-
+//
             Room newRoom = dungeon.ChooseNextRoom();
             dungeon.SetCurrentLevel(newRoom);
         }

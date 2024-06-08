@@ -24,7 +24,7 @@ public class Player {
         this.name    = name;
 
         ArrayList<Item> basicInventory = new ArrayList<Item>();
-        Item axeItem = new Axe("Guwniana siekiera XD", 10, 5);
+        Item axeItem = new Axe("Guwniana siekiera XD", 40, 5);
         basicInventory.add(axeItem);
         Inventory playerInventory = new Inventory(basicInventory);
         setPlayerInventory(playerInventory);
@@ -34,17 +34,17 @@ public class Player {
         int monsterHealth = monster.getHealth();
         int damage = getDamage(item);
         if (getStamina() <= 0) {
-            System.out.println("You need to rest! ");
+            System.out.println(" You need to rest! ");
         } else {
             monster.setHealth( monsterHealth - damage );
         }
         if (monster.getHealth() <= 0) {
-            System.out.println("Monster" + monster.getName() + " is dead. Go to the next room...");
+            System.out.println("Monster " + monster.getName() + " is dead. Go to the next room... ");
             // delete monster ? <- No, there will be new room
 
         } else {
             monster.TakeDamage(damage);
-            System.out.println("Monster " + monster.getName() + " has " + monster.getHealth() + " HP.");
+            System.out.println("Monster " + monster.getName() + " has " + monster.getHealth() + " HP. ");
         }
         // Zrobimy tak, że tutaj monster ma odejmowany health
     }

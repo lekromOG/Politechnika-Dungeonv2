@@ -42,4 +42,11 @@ public interface Monster {
     public void LevelUp();
 
     public void PrintStats();
+
+    public String getCreatedTalk();
+
+    void PrintDeathMessage();
+
+    void PrintItemsDropped();
+
 }

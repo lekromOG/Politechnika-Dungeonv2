@@ -1,8 +1,7 @@
 package Monsters;
 
-import Monsters.Monster;
-import PolitechnikaDungeon.Dungeon;
 import PolitechnikaDungeon.Player;
+import org.json.JSONArray;
 
 public class BasicMonster implements Monster {
     private int health;
@@ -10,9 +9,13 @@ public class BasicMonster implements Monster {
     private int defense;
     private int speed;
     private int level;
+    private String createdTalk;
     private String name;
     private boolean isABoss;
     private String description;
+    private String deathMessage;
+    private JSONArray abilities;
+    private JSONArray loot;
 
     public BasicMonster(int health, int attack, int defense, int speed, int level, String name) {
         this.health = health;
@@ -56,7 +59,7 @@ public class BasicMonster implements Monster {
 
     public void TakeDamage(int damage) {
         this.health -= damage;
-        System.out.println(this.name + "ouchie! I just took" + damage + ":(");
+        System.out.println(this.name + " ouchie! I just took " + damage + " :(");
 
     }
 
@@ -130,4 +133,27 @@ public class BasicMonster implements Monster {
         return this.description;
     }
 
+    public void setCreatedTalk(String sMonsterTalk) {this.createdTalk = sMonsterTalk;}
+
+    public String getCreatedTalk() {return this.createdTalk;}
+
+    public void setDeathMessage(String sMonsterDeath) {this.deathMessage = sMonsterDeath;}
+
+    public String getDeathMessage() {return deathMessage;}
+
+    public void setAbilities(JSONArray sMonsterAbilityName) {this.abilities = sMonsterAbilityName;}
+
+    public JSONArray getAbilities() {return abilities;}
+
+    public void setLoot(JSONArray sMonsterLoot) {this.loot = sMonsterLoot;}
+
+    public JSONArray getLoot() {return loot;}
+
+    public void PrintDeathMessage() {
+        System.out.println(getDeathMessage());
+    }
+
+    public void PrintItemsDropped(){
+        System.out.println(getLoot());
+    }
 }
